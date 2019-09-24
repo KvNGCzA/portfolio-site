@@ -1,0 +1,92 @@
+$dark-green: #242E28;
+$background: #1C1C1C;
+$primary-green: #6FCF97;
+$font: 'Roboto', sans-serif;
+
+.page-content {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .top {
+    display: flex;
+    flex:1;
+
+    .partition {
+      flex:1;
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2em;
+      padding-left: 13em;
+
+      .info {
+        position: relative;
+        top: 8em;
+        right:  1em;
+
+        h1  {
+          font-family: $font;
+          font-size: 70px;
+          font-weight: bold;
+          color: #FFF;
+        }
+
+        p {
+          color: $primary-green;
+          font-size: 34px;
+          margin-bottom: 0.2em;
+        }
+
+        span {
+          font-size: 16px;
+          color: #fff;
+          font-weight: lighter;
+
+          span {
+            color: $primary-green;
+            font-weight: 500;
+          }
+        }
+      }
+
+      img {
+        position: relative;
+        top: 14em;
+        height: 30%;
+        width: auto;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: flex-end;
+
+      .homeart {
+        top: -1em;
+        right: 3em;
+        height: 70%;
+        width: auto;
+        position: relative;
+      }
+    }
+  }
+
+  .bottom {
+    height: fit-content;
+    align-content: center;
+    color: $primary-green;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 0 2em;
+
+    p {
+      margin: 0 0 0.5em;
+    }
+  }
+}
