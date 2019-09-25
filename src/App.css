@@ -5,7 +5,7 @@
   height: 352px;
   left: 0;
   position: fixed;
-  top: 0;
+  top: -3em;
   width: 100vw;
 }
 
@@ -17,7 +17,7 @@
   height:  352px;
   background: url('./images/Ellipse.png');
   position: fixed;
-  top: 0;
+  top: -6em;
   left: 0;
   opacity: 0.4;
 }
@@ -35,26 +35,9 @@
   opacity: 0.6;
 }
 
-.down-arrows {
-  display: flex;
-  flex-direction: column;
-}
 
 .down-arrows .scroll-arrow {
-  position: relative;
-}
-
-.down-arrows .support, .down-arrows .support2 {
-  opacity: 0.4;
   animation: bounce-fade 1s alternate infinite;
-}
-
-.down-arrows .support2 {
-  opacity: 0.1;
-}
-
-.down-arrows .main {
-  animation: bounce 1s alternate infinite;
 }
 
 @keyframes animate {
