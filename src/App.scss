@@ -7,7 +7,6 @@ $font: 'Roboto', sans-serif;
 
 * {
   box-sizing: border-box;
-  // font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -24,9 +23,6 @@ body, html {
   position: relative;
   width: 100%;
 
-  .wave {
-  }
-
   .left-sidebar {
     align-items: center;
     display: flex;
@@ -41,21 +37,6 @@ body, html {
     .logo {
       height: 87px;
       width: auto;
-    }
-
-    .social-icons {
-      bottom: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      .icon {
-        margin: 0.4em 0;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
     }
   }
 }
