@@ -4,7 +4,7 @@
   background-repeat: repeat-x;
   height: 352px;
   left: 0;
-  position: fixed;
+  position: absolute;
   top: -3em;
   width: 100vw;
 }
@@ -16,7 +16,7 @@
   width: 100%;
   height:  352px;
   background: url('./images/Ellipse.png');
-  position: fixed;
+  position: absolute;
   top: -6em;
   left: 0;
   opacity: 0.4;
@@ -29,14 +29,14 @@
   width: 100%;
   height:  352px;
   background: url('./images/Ellipse.png');
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   opacity: 0.6;
 }
 
 
-.down-arrows .scroll-arrow {
+.down-arrows .scroll-arrow, .up-arrows .scroll-arrow{
   animation: bounce-fade 1s alternate infinite;
 }
 
