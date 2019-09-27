@@ -24,8 +24,14 @@ $primary-green: #6FCF97;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-decoration: none;
+      background: transparent;
       color: $background;
+      border-color: transparent;
+      outline: none !important;
+
+      &:hover {
+        cursor: pointer;
+      }
   
       &--active {
         border: 1px solid $primary-green;

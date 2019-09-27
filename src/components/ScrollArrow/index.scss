@@ -1,13 +1,21 @@
 $primary-green: #6FCF97;
 
 .down-arrows {
+  bottom: 5%;
+}
+
+.up-arrows {
+  top: 5%;
+  transform: rotate(180deg);
+}
+
+.down-arrows, .up-arrows {
   display: flex;
   flex-direction: column;
   color: $primary-green;
   font-weight: bold;
   text-align: center;
   position: fixed;
-  bottom: 5%;
   margin: 0 auto;
   width: 100%;
   z-index: 5;
