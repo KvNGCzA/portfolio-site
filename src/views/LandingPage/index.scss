@@ -10,6 +10,9 @@ $font: 'Roboto', sans-serif;
   display: flex;
   overflow: hidden;
   flex:1;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  scroll-behavior: 2s;
 
 
   .partition {

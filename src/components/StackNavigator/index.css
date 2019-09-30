@@ -1,0 +1,27 @@
+/* .logo-bar {
+  -webkit-animation: rotation 2s infinite linear;
+  animation: rotation 2s infinite linear;
+
+}
+
+@keyframes rotation {
+  from {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+  }
+  to {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+  }
+}
+
+@keyframes reverse-rotation {
+  from {
+      -webkit-transform: rotate(359);
+      transform: rotate(359);
+  }
+  to {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+  }
+} */

@@ -11,6 +11,8 @@ $primary-green: #6FCF97;
     .vl {
       border-left: 1px solid green;
       height: 21.5px;
+      transition-property: border-left;
+      transition-duration: .5s;      
 
       &--inactive {
         border-left: 1px solid #4F4F4F;
@@ -28,18 +30,30 @@ $primary-green: #6FCF97;
       color: $background;
       border-color: transparent;
       outline: none !important;
-
-      &:hover {
-        cursor: pointer;
-      }
+      transition-property: border;
+      transition-duration: .5s;
   
       &--active {
         border: 1px solid $primary-green;
       }
+
+      &--inactive {
+        &:hover {
+          border-color: rgba(111, 207, 151, 0.4);
+  
+          .nav-item {
+            background-color: rgba(111, 207, 151, 0.4);
+  
+            .text {
+              color: $primary-green;
+            }
+          }
+        }
+      }
   
       .nav-item {
-        background: #4F4F4F;
-        font-size: 16px;
+        background-color: #4F4F4F;
+        font-size: 14px;
         border-radius: 100%;
         width: 35px;
         height: 35px;
@@ -49,9 +63,11 @@ $primary-green: #6FCF97;
         font-weight: normal;
         position: relative;
         font-family: 'Roboto', sans-serif;
+        transition-property: background-color;
+        transition-duration: .5s;
   
         &--active {
-          background: $primary-green;
+          background-color: $primary-green;
         }
 
         .text {
@@ -60,6 +76,8 @@ $primary-green: #6FCF97;
           font-weight: 100;
           left: 3em;
           width: 5em;
+          transition-property: color;
+          transition-duration: .5s;
 
           &--active {
             color: $primary-green;
