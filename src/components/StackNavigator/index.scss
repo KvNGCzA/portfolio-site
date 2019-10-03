@@ -44,25 +44,32 @@ $primary-green: #6FCF97;
           align-items: center;
           height: 100%;
 
-          .logo {
-            margin-bottom: 0.5em;
+          .logo-cont {
+            display: flex;
+            justify-content: center;
+            margin: 1em 0;
+            align-items: center;
+            height: auto;
+            width: 8%;
+            position: relative;
+            opacity: 0.8;
 
-            .logo-bar {
-              position: relative;
-
-
+            .logo-text {
+              position: absolute;
+              width: 60%;
             }
-                .logotext {
-                  // -webkit-animation: reverse-rotation 2s infinite linear;
-                  // animation: reverse-rotation 2s infinite linear;
-                  transform: rotate(30deg);
-                }
+
+            .logo {
+              height: auto;
+              width: 100%;
+            }
           }
 
           .chair {
             position: absolute;
             right: 21%;
-            top: 50%;
+            top: 43%;
+            width: 12%;
             opacity: 0.1;
           }
 
@@ -83,12 +90,12 @@ $primary-green: #6FCF97;
             align-items: center;
             background-color: $primary-green;
             margin-top: 1.5em;
-            transition-duration: 0.5s;
-            transition-property: margin width;
+            transition-property: margin width opacity;
             transition-duration: 1s;
 
             &:hover {
-              opacity: 1;
+              opacity: 0.9;
+              animation: none;
             }
 
             &--active {

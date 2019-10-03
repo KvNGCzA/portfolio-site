@@ -3,6 +3,7 @@ import './index.scss';
 import './index.css';
 import hologram from '../../images/hologram.svg';
 import homeart from '../../images/home-art.svg';
+import ReactSVG from 'react-svg';
 
 
 const LandingPage = () => 
@@ -10,17 +11,17 @@ const LandingPage = () =>
     <div className="partition left">
       <div className="info">
         <h1>Hi,</h1>
-        <p>I'm Christopher Akanmu</p>
+        <p>I'm Chris</p>
         <span>
           A Fullstack Software Engineer based in Lagos, Nigeria.<br/>
           I enjoy remote work. Currently employed at <span>Andela</span>.
         </span>
       </div>
-      <img src={hologram} alt="" />
+      <ReactSVG src={hologram} alt="" className="hologram"/>
     </div>
     <div className="partition right">
     {/* <SVG /> */}
-      <img className="homeart" src={homeart} alt="" />
+      <ReactSVG className="homeart" src={homeart} alt="" />
     </div>
   </div>;
 

@@ -18,7 +18,8 @@ import network from '../../images/network.svg';
 import battery from '../../images/battery.svg';
 import camera from '../../images/camera.svg';
 import poddle from '../../images/poddle.svg';
-import logo from '../../images/logo.svg';
+import logoRim from '../../images/logo-rim.svg';
+import logoText from '../../images/logo-text.svg';
 import chair from '../../images/chair.svg';
 import ReactSVG from 'react-svg'
 
@@ -79,15 +80,18 @@ class StackNavigator extends Component {
   renderStackLanding = ({ active }) => (
     <div className="nav">
       <div className="nav-cont">
-        <ReactSVG src={logo} alt="logo" className="logo"/>
+        <div className="logo-cont" style={{ position: 'relative' }}>
+          <img src={logoRim} alt="logo-cont" className="logo logo-rim"/>
+          <img src={logoText} alt="logo-text" className="logo-text"/>
+        </div>
         <img src={chair} alt="chair" className="chair"/>
-        <div onClick={() => this.setActive(0)} alt="" className={`focuses focuses--${active === 0 ? 'active': 'inactive'}`}>
+        <div onClick={() => this.setActive(0)} alt="" className={`focus--flicker focuses focuses--${active === 0 ? 'active': 'inactive'}`}>
           <p className="focus--title">Frontend</p>
         </div>
-        <div onClick={() => this.setActive(1)} alt="" className={`focuses focuses--${active === 1 ? 'active': ''}`}>
+        <div onClick={() => this.setActive(1)} alt="" className={`focus--flicker focus--flicker2 focuses focuses--${active === 1 ? 'active': ''}`}>
           <p className="focus--title">Backend</p>
         </div>
-        <div onClick={() => this.setActive(2)} alt="" className={`focuses focuses--${active === 2 ? 'active': ''}`}>
+        <div onClick={() => this.setActive(2)} alt="" className={`focus--flicker focus--flicker3 focuses focuses--${active === 2 ? 'active': ''}`}>
           <p className="focus--title">Others</p>
         </div>
         <img src={poddle} alt="poddle" className="poddle"/>
@@ -128,7 +132,7 @@ class StackNavigator extends Component {
 
             {/* ipad icons and symbols */}
             <img src={network}  alt="" className="stack-symbols stack-symbols__network"/>
-            <p className="stack-symbols stack-symbols__time">Tue, September 28, 19:23</p>
+            <p className="stack-symbols stack-symbols__time">{new Date().toUTCString()}</p>
             <img src={battery}  alt="" className="stack-symbols stack-symbols__battery"/>
             <img src={stackHashes}  alt="" className="stack-symbols stack-symbols__hash"/>
             <div className="stack-symbols stack-symbols__up-cont">

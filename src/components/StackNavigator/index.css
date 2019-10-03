@@ -1,7 +1,30 @@
-/* .logo-bar {
-  -webkit-animation: rotation 2s infinite linear;
-  animation: rotation 2s infinite linear;
+.logo-rim {
+  animation: rotation 10s linear infinite;
+}
 
+.logo-text {
+  /* animation: rotation 10s linear infinite; */
+}
+
+.focus--flicker {
+  animation: focus-flicker 1s alternate infinite;
+}
+
+.focus--flicker2 {
+  animation-delay: 0.2s;
+}
+
+.focus--flicker3 {
+  animation-delay: 0.4s;
+}
+
+@keyframes focus-flicker {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0.6;
+  }
 }
 
 @keyframes rotation {
@@ -24,4 +47,4 @@
       -webkit-transform: rotate(0);
       transform: rotate(0);
   }
-} */
+}

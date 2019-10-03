@@ -35,6 +35,26 @@
   opacity: 0.6;
 }
 
+.hologram {
+  /* animation: rotation 12s linear infinite; */
+}
+
+.flicker {
+  animation: flicker 1s alternate infinite;
+}
+
+.flicker2 {
+  animation: flicker-reverse 1s alternate infinite;
+}
+
+.flicker3 {
+  animation: flicker 0.5s alternate infinite;
+}
+
+.flicker4 {
+  animation: flicker-reverse 0.5s alternate infinite;
+}
+
 @keyframes animate {
   from {
     background-position: 0;
@@ -50,5 +70,23 @@
   }
   to {
     background-position: 0;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: initial;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+
+@keyframes flicker-reverse {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: initial;
   }
 }
