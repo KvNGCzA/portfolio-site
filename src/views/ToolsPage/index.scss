@@ -1,0 +1,71 @@
+$font: 'Roboto', sans-serif;
+$background: #1C1C1C;
+$primary-green: #6FCF97;
+$text-color: #F2F2F2;
+
+.tools-page {
+  display: flex;
+  justify-content: center;
+
+  .shuttle {
+    position: absolute;
+    opacity: 0.9;
+  }
+
+  .greenshuttle {
+    animation: greenshuttle 2s alternate infinite;
+    position: absolute;
+    bottom: 2%;
+    left: 20%;
+  }
+  
+  .whiteshuttle {
+    animation: whiteshuttle 3s alternate infinite;
+    right: 5%;
+    top: 28%;
+  }
+
+  .tools-cont {
+    display: inherit;
+    justify-content: center;
+    width: 70%; 
+
+    .tool-focus {
+      width: 33.33%;
+      display: inherit;
+      justify-content: flex-start;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      top: 17%;
+
+      .tool-image {
+        margin-bottom: 3em;
+      }
+
+      .tool {
+        display: inherit;
+        align-items: center;
+        flex-direction: inherit;
+        text-transform: capitalize;
+        font-family: $font;
+
+        .tool-name {
+          color: $primary-green;
+          margin-bottom: .5em;
+          font-size: 1em;
+          letter-spacing: 0.2em;
+        }
+
+        .tool-tools {
+          font-size: .85em;
+          color: $text-color;
+          margin-bottom: 1.8em;
+          width: 17em;
+          font-weight: 300;
+          letter-spacing: 0.2em;
+        }
+      }
+    }
+  }
+}

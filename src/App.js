@@ -3,7 +3,7 @@ import LeftSideBar from './components/LeftSideBar';
 import LandingPage from './views/LandingPage';
 import ScrollArrow from './components/ScrollArrow';
 import './App.scss';
-import StacksPage from './views/StacksPage';
+import ToolsPage from './views/ToolsPage';
 
 class App extends Component {
   state = {
@@ -11,7 +11,7 @@ class App extends Component {
     options: [{
       text: 'welcome'
     }, {
-      text: 'my stack'
+      text: 'my tools'
     }, {
       text: 'resume'
     }],
@@ -44,7 +44,7 @@ class App extends Component {
         && currentPage !== 0
       ) {
       eventTarget.removeEventListener('scroll', this.autoScroll);
-      this.resetStackPage(500);
+      // this.resetStackPage(500);
       this.setState({ currentPage: 0 });
       run = true;
     } else if (
@@ -60,7 +60,7 @@ class App extends Component {
       && currentPage !== 2
     ) {
       eventTarget.removeEventListener('scroll', this.autoScroll);
-      this.resetStackPage(500);
+      // this.resetStackPage(500);
       this.setState({ currentPage: 2 });
       run = true;
     }  if (run) {
@@ -81,7 +81,7 @@ class App extends Component {
   }
 
   setCurrentPage = (value) => {
-    if (value !== 1) this.resetStackPage();
+    // if (value !== 1) this.resetStackPage();
     const eventTarget = document.getElementsByClassName('container')[0];
     eventTarget.removeEventListener('scroll', this.autoScroll);
     const target = document.getElementsByClassName('container')[0];
@@ -141,7 +141,7 @@ class App extends Component {
           {upArrow}
           {downArrow}
           <LandingPage />
-          <StacksPage resetStackPage={this.resetStackPage} secondStackPage={this.secondStackPage}/>
+          <ToolsPage />
           <LandingPage />
         </div>
       </div>

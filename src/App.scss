@@ -29,6 +29,8 @@ body, html {
 
 .container {
   background-color: $background;
+  background-image: url('./images/back-stars.svg');
+  background-size: contain;
   height: 100vh;
   position: relative;
   width: 100%;
@@ -50,7 +52,7 @@ body, html {
     z-index: 2;
 
     .logo {
-      height: 87px;
+      height: 14%;
       width: auto;
     }
   }
