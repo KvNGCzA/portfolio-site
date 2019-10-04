@@ -3,8 +3,7 @@ import LeftSideBar from './components/LeftSideBar';
 import LandingPage from './views/LandingPage';
 import ScrollArrow from './components/ScrollArrow';
 import './App.scss';
-import './App.css';
-import StacksPage from './views/StacksPage';
+import ToolsPage from './views/ToolsPage';
 
 class App extends Component {
   state = {
@@ -12,68 +11,99 @@ class App extends Component {
     options: [{
       text: 'welcome'
     }, {
-      text: 'my stack'
+      text: 'my tools'
     }, {
-      text: 'contact'
+      text: 'resume'
     }],
-    positions: {},
   }
 
   componentDidMount() {
-    const { options } = this.state;
-    const windowHeight = window.innerHeight;
-    const positions = {};
-    options.forEach((option, index) => {
-      const arr = [
-        windowHeight * index,
-        (windowHeight * (index + 1)) - 1
-      ];
-      positions[index] = arr;
-    });
-    this.setState(
-      { positions },
-      window.addEventListener('scroll', this.autoScroll)
-    );
+    const target = document.getElementsByClassName('container')[0];
+    target.addEventListener('scroll', this.autoScroll);
+  }
+
+  runCords = () => {
+    const { currentPage } = this.state;
+    const el1 = document.getElementsByClassName('page-content');
+    var bounding1 = el1[0].getBoundingClientRect();
+    var bounding2 = el1[1].getBoundingClientRect();
+    var bounding3 = el1[2].getBoundingClientRect();
+    console.log(currentPage, bounding1, bounding2, bounding3);
   }
 
   autoScroll = () => {
     const { currentPage } = this.state;
-    const windowHeight = window.innerHeight;
-    const top = Math.abs((document.body.getBoundingClientRect()).top);
-    console.log(top);
-    if (top < windowHeight && currentPage === 1) {
-      console.log('scroll to page 1');
-      // scroll to page 1
-      this.setCurrentPage(0);
+    const eventTarget = document.getElementsByClassName('container')[0];
+    const height = window.innerHeight;
+    const top = Math.abs((document.getElementsByClassName('landing-page')[0].getBoundingClientRect()).top);
+    let run = false;
+    const limit = height/2;
+    if (
+        top < height - limit
+        && top < height
+        && currentPage !== 0
+      ) {
+      eventTarget.removeEventListener('scroll', this.autoScroll);
+      // this.resetStackPage(500);
+      this.setState({ currentPage: 0 });
+      run = true;
     } else if (
-      (top > 0 && top < windowHeight)
-      || (top < windowHeight * 2 && currentPage === 2)
+      (top > limit && top < (height * 2))
+      && currentPage !== 1
     ) {
-      console.log('scroll to page 2');
-      // scroll to page 2
-      this.setCurrentPage(1);
-    } else {
-      console.log('scroll to page 3');
-      // scroll to page 3
-      this.setCurrentPage(2);
+      eventTarget.removeEventListener('scroll', this.autoScroll);
+      this.setState({ currentPage: 1 });
+      run = true;
+    } else if (
+      top > height + limit
+      && top < (height * 2)
+      && currentPage !== 2
+    ) {
+      eventTarget.removeEventListener('scroll', this.autoScroll);
+      // this.resetStackPage(500);
+      this.setState({ currentPage: 2 });
+      run = true;
+    }  if (run) {
+      setTimeout(() => {
+        eventTarget.addEventListener('scroll', this.autoScroll);
+      }, height < 800 ? 300 : 880);
     }
   }
 
+  resetStackPage = (time) => {
+    const target = document.getElementsByClassName('slide')[0];
+    setTimeout(() => {
+      target.scrollTo({
+        left: 0,
+        behavior: 'smooth'
+      });
+    }, time || 0);
+  }
+
   setCurrentPage = (value) => {
-    console.log('value', value);
-    window.removeEventListener('scroll', this.autoScroll);
+    // if (value !== 1) this.resetStackPage();
+    const eventTarget = document.getElementsByClassName('container')[0];
+    eventTarget.removeEventListener('scroll', this.autoScroll);
+    const target = document.getElementsByClassName('container')[0];
     const windowHeight = window.innerHeight;
     const scrollTo = value * windowHeight;
-    console.log('value', value, 'scrollTo', scrollTo);
-    window.scrollTo({
+    target.scrollTo({
       top: scrollTo,
       left: 0,
       behavior: 'smooth'
     });
     this.setState({ currentPage: value });
     setTimeout(() => {
-      window.addEventListener('scroll', this.autoScroll);
-    }, 1000);
+      eventTarget.addEventListener('scroll', this.autoScroll);
+    }, 1005);
+  }
+
+  secondStackPage = () => {
+    const target = document.getElementsByClassName('slide')[0];
+    target.scrollTo({
+      left: window.innerWidth,
+      behavior: 'smooth'
+    });
   }
 
   scrollTo = (direction) => {
@@ -111,7 +141,7 @@ class App extends Component {
           {upArrow}
           {downArrow}
           <LandingPage />
-          <StacksPage />
+          <ToolsPage />
           <LandingPage />
         </div>
       </div>
