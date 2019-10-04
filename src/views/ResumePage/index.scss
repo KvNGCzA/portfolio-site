@@ -1,0 +1,15 @@
+$font: 'Roboto', sans-serif;
+$background: #1C1C1C;
+$primary-green: #6FCF97;
+$text-color: #F2F2F2;
+
+.resume-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    color: $primary-green;
+    letter-spacing: 1em;
+  }
+}

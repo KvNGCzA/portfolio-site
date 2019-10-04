@@ -4,6 +4,7 @@ import LandingPage from './views/LandingPage';
 import ScrollArrow from './components/ScrollArrow';
 import './App.scss';
 import ToolsPage from './views/ToolsPage';
+import ResumePage from './views/ResumePage';
 
 class App extends Component {
   state = {
@@ -142,7 +143,7 @@ class App extends Component {
           {downArrow}
           <LandingPage />
           <ToolsPage />
-          <LandingPage />
+          <ResumePage />
         </div>
       </div>
     );
