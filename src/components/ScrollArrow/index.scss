@@ -10,15 +10,13 @@ $primary-green: #6FCF97;
 }
 
 .down-arrows, .up-arrows {
-  display: flex;
-  flex-direction: column;
   color: $primary-green;
   font-weight: bold;
   text-align: center;
   position: fixed;
   margin: 0 auto;
   width: 100%;
-  z-index: 5;
+  z-index: 1;
 
   .scroll-arrow {
     position: relative;
@@ -30,7 +28,6 @@ $primary-green: #6FCF97;
 
   &:hover {
     cursor: pointer;
-    // cursor: url('../../images/round-mouse-target.png'), auto;
   }
 
   .support {
