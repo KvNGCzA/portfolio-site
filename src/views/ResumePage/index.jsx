@@ -1,18 +1,16 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import './index.scss';
-import backendtext from '../../images/backendtext.svg';
+import './index.css';
+import aboutme from '../../images/aboutme.svg';
+import spaceship from '../../images/spaceship.svg';
 
-class ResumePage extends Component {
-
-  state = {}
-
-  render() {
-    return(
-      <div className="page-content resume-page">
-        <h1>loading...</h1>
-      </div>
-    );
-  }
-}
+const ResumePage = () => (
+  <div className="page-content resume-page">
+    <div className="about-me">
+      <img className="aboutme-text" src={aboutme} alt=""/>
+      <img className="spaceship" src={spaceship} alt="" />
+    </div>
+  </div>
+);
 
 export default ResumePage;
