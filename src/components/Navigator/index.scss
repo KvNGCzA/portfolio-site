@@ -88,3 +88,30 @@ $primary-green: #6FCF97;
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .navigator {
+    display: flex;
+
+    .nav-cont {
+      flex-direction: row;
+
+      .vl {
+        transform: rotate(90deg);
+        margin: 0 0.65em;
+      }
+
+      .nav-halo {
+
+        .nav-item {
+
+          .text {
+            top: 3em;
+            left: initial;
+
+          }
+        }
+      }
+    }
+  }
+}

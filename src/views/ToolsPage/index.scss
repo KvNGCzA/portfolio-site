@@ -15,14 +15,14 @@ $text-color: #F2F2F2;
   .greenshuttle {
     animation: greenshuttle 2s alternate infinite;
     position: absolute;
-    bottom: 2%;
-    left: 20%;
+    bottom: 2em;
+    left: 19em;
   }
   
   .whiteshuttle {
     animation: whiteshuttle 3s alternate infinite;
-    right: 5%;
-    top: 28%;
+    right: 5em;
+    top: 12em;
   }
 
   .tools-cont {
@@ -32,12 +32,12 @@ $text-color: #F2F2F2;
 
     .tool-focus {
       width: 33.33%;
-      display: inherit;
+      display: flex;
       justify-content: flex-start;
       flex-direction: column;
       text-align: center;
       position: relative;
-      top: 17%;
+      top: 8em;
 
       .tool-image {
         margin-bottom: 3em;
@@ -69,3 +69,43 @@ $text-color: #F2F2F2;
     }
   }
 }
+
+@media (max-width: 1024px) {
+
+  .tools-page {
+
+    .greenshuttle {
+      animation: greenshuttle2 2s alternate infinite;
+      bottom: initial;
+      top: 28em;
+      left: 3em;
+    }
+
+    .tools-cont {
+      display: block;
+      flex-direction: column;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      height: 80%;
+
+      .tool-focus {
+        width: 100%;
+        top: 2em;
+
+        .tool-image {
+          margin-bottom: 1em;
+        }
+
+        .tool {
+          .tool-name {
+            font-size: 1.2em;
+          }
+  
+          .tool-tools {
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+} 

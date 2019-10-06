@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import './index.scss';
+import './index.css';
 import backendtext from '../../images/backendtext.svg';
 import frontendtext from '../../images/frontendtext.svg';
 import otherstext from '../../images/otherstext.svg';
@@ -58,7 +59,7 @@ class ToolsPage extends Component {
       tools: 'ESLint, AirBnB Style Guide, BEM convention'
     }, {
       name: 'Noteworthy',
-      tools: 'Wordpress, FTP, PHP'
+      tools: 'Wordpress, FTP, PHP, ES6, Css Animations'
     }]
   }
 

@@ -1,11 +1,11 @@
 $primary-green: #6FCF97;
 
 .down-arrows {
-  bottom: 5%;
+  bottom: 2.5em;
 }
 
 .up-arrows {
-  top: 5%;
+  top: 2.5em;
   transform: rotate(180deg);
 }
 
@@ -19,7 +19,10 @@ $primary-green: #6FCF97;
   z-index: 1;
 
   .scroll-arrow {
+    animation: bounce-fade 1s alternate infinite;
     position: relative;
+    width: 3em;
+    height: auto;
   }
 
   p {
@@ -42,3 +45,26 @@ $primary-green: #6FCF97;
     opacity: 0.5;
   }
 }
+
+@media (max-width: 1024px) {
+  .down-arrows {
+    right: 1em;
+    bottom: initial;
+  }
+  
+  .up-arrows {
+    left: 1em;
+    top: initial;
+  }
+  
+  .down-arrows, .up-arrows {
+    height: 100%;
+    width: auto;
+    display: flex;
+    
+    .scroll-arrow {
+      transform: rotate(-90deg);
+      animation: bounce-fade-right 1s alternate infinite;
+    }
+  }
+} 
