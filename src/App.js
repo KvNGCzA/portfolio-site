@@ -14,7 +14,7 @@ class App extends Component {
     }, {
       text: 'my tools'
     }, {
-      text: 'resume'
+      text: 'about me'
     }],
   }
 
