@@ -4,12 +4,21 @@ $primary-green: #6FCF97;
 $text-color: #F2F2F2;
 
 .resume-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  h1 {
-    color: $primary-green;
-    letter-spacing: 1em;
+  .about-me {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .aboutme-text {
+      margin-left: 17em;
+      max-height: 63%;
+    }
+
+    .spaceship {
+      position: absolute;
+      right: 8em;
+      animation: spaceship 2s alternate infinite;
+    }
   }
 }
