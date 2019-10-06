@@ -105,22 +105,9 @@
 }
 
 @keyframes mainshuttle {
-  0% { bottom: 5%; }
-  30% { right: 11% }
-  60% { right: 9% }
-  100% { bottom: 10%; }
+  0% { bottom: 4em }
+  30% { right: 5em }
+  60% { right: 3em }
+  100% { bottom: 7em; }
 }
 
-@keyframes greenshuttle {
-  0% { bottom: 2%; }
-  30% { left: 19% }
-  60% { left: 21% }
-  100% { bottom: 4%; }
-}
-
-@keyframes whiteshuttle {
-  0% { top: 28%; }
-  30% { right: 7% }
-  60% { right: 3% }
-  100% { top: 20%; }
-}
