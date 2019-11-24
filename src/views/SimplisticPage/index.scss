@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik+Mono+One&display=swap');
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('../../fonts/RubikOne-Regular.ttf')  format('truetype')
+}
+
+$darkColor: #3F3D56;
+$red: #B84D4D;
+
+.simplistic-page {
+
+  .simplistic-header {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 4em;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1em;
+    
+    ul {
+      list-style: none;
+      display: flex;
+
+      .active {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $red;
+
+        a {
+          color: $red;
+        }
+
+        &--underline-parent {
+          width: 1em;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &--underline {
+          position: absolute;
+          border-bottom: 1px solid $red;
+          width: 1.4em;
+          background-color: black;
+        }
+      }
+
+      li {
+        display: inline-block;
+        color: $darkColor;
+        font-family: 'Rubik', sans-serif;
+        text-transform: uppercase;
+        margin: 0 1em;
+
+        a {
+          color: $darkColor;
+        }
+      }
+    }
+
+    .download-resume {
+      text-decoration: none;
+      position: relative;
+      font-family: 'Rubik', sans-serif;
+      text-transform: uppercase;
+      
+
+      span {
+        font-family: 'Rubik', sans-serif;
+        color: #EBEBEB;
+
+        &:first-child {
+          position: absolute;
+          left: -0.05em;
+          color: $darkColor;
+        }
+      }
+    }
+  }
+}

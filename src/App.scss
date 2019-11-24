@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik+Mono+One&display=swap');
 
 $dark-green: #242E28;
 $background: #1C1C1C;
@@ -9,13 +9,18 @@ $font: 'Roboto', sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: $font;
-  cursor: url('./images/mouse.png'), auto!important;
+  // font-family: $font;
+  // cursor: url('./images/mouse.png'), auto!important;
+}
+a {
+  text-decoration: none;
 }
 
 body, html {
-  background: $background;
-  height: 100%;
+  // background: $background;
+  background-image: url('./images/back.svg');
+  background-size: contain;
+  height: 2700px;
   position: relative;
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
