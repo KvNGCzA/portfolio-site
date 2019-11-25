@@ -1,14 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Roboto:100,300,400,500,500i,700,900&display=swap');
 
 @font-face {
   font-family: 'Rubik';
   src: url('../../fonts/RubikOne-Regular.ttf')  format('truetype')
 }
 
+@mixin gradient($direction, $list) { 
+  color: -webkit-linear-gradient($direction, $list);
+  color: -moz-linear-gradient($direction, $list);
+  color: -o-linear-gradient($direction, $list);
+  color: linear-gradient($direction, $list);  
+}
+
 $darkColor: #3F3D56;
 $red: #B84D4D;
+$font: 'Rubik', sans-serif;
 
 .simplistic-page {
+  height: 100%;
 
   .simplistic-header {
     width: 100%;
@@ -18,8 +27,9 @@ $red: #B84D4D;
     justify-content: space-between;
     align-items: center;
     padding: 1em 4em;
-    font-family: 'Rubik', sans-serif;
+    font-family: $font;
     font-size: 1em;
+    top: 0;
     
     ul {
       list-style: none;
@@ -54,7 +64,7 @@ $red: #B84D4D;
       li {
         display: inline-block;
         color: $darkColor;
-        font-family: 'Rubik', sans-serif;
+        font-family: $font;
         text-transform: uppercase;
         margin: 0 1em;
 
@@ -67,18 +77,62 @@ $red: #B84D4D;
     .download-resume {
       text-decoration: none;
       position: relative;
-      font-family: 'Rubik', sans-serif;
+      font-family: $font;
       text-transform: uppercase;
       
 
       span {
-        font-family: 'Rubik', sans-serif;
+        font-family: $font;
         color: #EBEBEB;
 
         &:first-child {
           position: absolute;
           left: -0.05em;
           color: $darkColor;
+        }
+      }
+    }
+  }
+
+  .simplistic-body {
+    padding-top: 15em;
+
+    .introduction {
+      text-align: right;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .simplistic-skills {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+        letter-spacing: 0.27em;
+        font-variant: small-caps;
+        color: $darkColor;
+      }
+
+      div {
+        margin-right: 10em;
+        
+        h1 {
+          &:nth-child(2) {
+            font-size: 6em;
+            background: linear-gradient(#3F3D56, #B84D4D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            top: -0.2em;
+            position: relative;
+          }
+          
+          &:last-child {
+            font-size: 5em;
+            top: -0.7em;
+            position: relative;
+            color: $red;
+          }
         }
       }
     }

@@ -1,11 +1,14 @@
-import React  from 'react';
+import React, { Component }  from 'react';
 import './index.scss';
 import ReactSVG from 'react-svg';
 import simplisticLogo from '../../images/simplistic-logo.svg'
 
-const SimplisticPage = () => 
-  <div className="simplistic-page">
-    <div className="simplistic-header">
+
+class SimplisticPage extends Component {
+
+  renderHeader = () => {
+    return (
+      <div className="simplistic-header">
         <img src={simplisticLogo} alt="logo"/>
         <ul>
           <li className="active">
@@ -25,7 +28,27 @@ const SimplisticPage = () =>
           <span>download my resume</span>
           <span>download my resume</span>
         </a>
-    </div>
-  </div>
+      </div>
+    );
+  }
+
+
+  render() {
+    return (
+      <div className="simplistic-page">
+        {this.renderHeader()}
+        <div className="simplistic-body">
+          <div className="introduction">
+            <div>
+              <h1 className="simplistic-skills">Fullstack engineer + Designer</h1>
+              <h1>christopher</h1>
+              <h1>akanmu</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+} 
 
 export default SimplisticPage;
