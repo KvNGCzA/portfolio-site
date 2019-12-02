@@ -59,7 +59,7 @@ class ToolsPage extends Component {
       tools: 'ESLint, AirBnB Style Guide, BEM convention'
     }, {
       name: 'Noteworthy',
-      tools: 'Wordpress, FTP, PHP, ES6, Css Animations'
+      tools: 'Wordpress, FTP, PHP, ES6, CSS Animations'
     }]
   }
 

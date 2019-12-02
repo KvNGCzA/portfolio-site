@@ -1,22 +1,33 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik+Mono+One&display=swap');
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('./fonts/RubikOne-Regular.ttf')  format('truetype')
+}
 
 $dark-green: #242E28;
-$background: #1C1C1C;
+$background: #3F3D56;
+$icon-purple: #B25FFF;
 $primary-green: #6FCF97;
-$font: 'Roboto', sans-serif;
+$font: 'Rubik', sans-serif;
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: $font;
-  cursor: url('./images/mouse.png'), auto!important;
+}
+a {
+  text-decoration: none;
 }
 
-body, html {
+body {
+  font-size: 14px;
   background: $background;
-  height: 100%;
-  position: relative;
+  background-image: url('./images/back.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  // position: relative;
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
 
@@ -61,7 +72,6 @@ body, html {
 @media (max-width: 1024px) {
   .container {
     display: flex;
-    // width: 300vw;
     overflow-y: hidden;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;

@@ -1,4 +1,4 @@
-$font: 'Roboto', sans-serif;
+$font: 'Lato', sans-serif;
 $background: #1C1C1C;
 $primary-green: #6FCF97;
 $text-color: #F2F2F2;
@@ -24,26 +24,37 @@ $text-color: #F2F2F2;
   }
 }
 
+@media (max-width: 1330px) {
+  .resume-page {
+
+    .about-me {
+      justify-content: center;
+      align-items: flex-start;
+  
+      .aboutme-text {
+        margin: 0;
+      }
+  
+      .spaceship {
+        display: none;
+      }
+    }
+  }
+}
+
 @media (max-width: 1024px) {
   .resume-page {
     align-items: flex-start;
 
     .about-me {
       max-height: none;
-      justify-content: center;
-      align-items: flex-start;
       padding: 2em 0;
       height: 80%;
       overflow-y: scroll;
-  
-      .aboutme-text {
-        margin: 0;
-        width: 80%;
-      }
-  
-      .spaceship {
-        display: none;
-      }
+    }
+    
+    .aboutme-text {
+      width: 80%;
     }
   }
 }

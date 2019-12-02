@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Roboto:100,300,400,500,500i,700,900&display=swap');
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('../../fonts/RubikOne-Regular.ttf')  format('truetype')
+}
+
+$darkColor: #3F3D56;
+$darkerColor: #282737;
+$icon-purple: #B25FFF;
+$font: 'Rubik', sans-serif;
+$roboto: 'Lato', sans-serif;
+$defGrey: #BDBDBD;
+$defPurp: #793DB0;
+$menuback: rgba(63, 61, 86, 0.5);
+$defaultShadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
+
+.simplistic-page {
+  height: 100%;
+
+  .simplistic-header {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 4em;
+    font-family: $font;
+    font-size: 1em;
+    top: 0;
+    z-index: 777;
+
+    &--item {
+      flex: 1;
+      display: flex;
+
+      &:first-child {
+        align-self: flex-start;
+      }
+
+      &--two {
+        justify-content: center;
+      }
+
+      &--three {
+        justify-content: flex-end;
+      }
+    }
+    
+    ul {
+      list-style: none;
+      display: flex;
+      background: $menuback;
+      border-radius: 10px;
+      align-items: center;
+      padding: 1.3em 2.7em;
+
+      .active {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $icon-purple;
+
+        a {
+          color: $icon-purple;
+        }
+
+        &--underline-parent {
+          width: 1em;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &--underline {
+          position: absolute;
+          border-bottom: 1px solid $icon-purple;
+          width: 1.4em;
+          background-color: black;
+        }
+      }
+
+      li {
+        display: inline-block;
+        color: $defGrey;
+        font-family: $font;
+        text-transform: uppercase;
+        margin: 0 1em;
+        text-align: center;
+
+        a {
+          color: $defGrey;
+        }
+      }
+    }
+
+    .download-resume {
+      text-decoration: none;
+      position: relative;
+      font-family: $font;
+      text-transform: uppercase;
+      
+
+      span {
+        font-family: $font;
+        color: #EBEBEB;
+
+        &:first-child {
+          position: absolute;
+          left: -0.05em;
+          color: $darkColor;
+        }
+      }
+    }
+  }
+
+  .simplistic-body {
+
+    .introduction {
+      text-align: right;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      height: 100vh;
+      text-align: right;
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 80em;
+        height: auto;
+      }
+    }
+
+    .simplistic-tools {
+      height: 100vh;
+      background-color: $darkerColor;
+      box-shadow: inset 0px 5px 7px rgba(0, 0, 0, 0.2);
+
+      &--parent {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        img {
+          width: 45em;
+          height: auto;
+        }
+      }
+
+      &--buttons {
+        display: flex;
+        margin-top: 3em;
+
+        a {
+          position: relative;
+          display: flex;
+          align-items: center;
+          font-family: 'Lato', sans-serif;
+          font-weight: bold;
+          font-size: 1em;
+          letter-spacing: 0.08em;
+          color: $defGrey;
+          background-color: $defPurp;
+          border: 1px solid $defPurp;
+          padding: 1.2em 3em;
+          text-transform: uppercase;
+          border-radius: 6px;
+          outline: none !important;
+          margin: 0 1em;
+          box-shadow: $defaultShadow;
+
+          img {
+            position: absolute;
+            right: 0.3em;
+            margin-right: 0.3em;
+            width: 0.5em;
+            height: auto;
+          }
+        }
+      }
+    }
+
+    .simplistic-message {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .simplistic-form {
+        width: 50em;
+        box-shadow: $defaultShadow;
+        border-radius: 10px;
+
+        &--header, &--footer {
+          background: $darkColor;
+          display: flex;
+          align-items: center;
+        }
+
+        &--header {
+          height: 2em;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+
+          img {
+            margin-left: 1em;
+            height: auto;
+          }
+        }
+
+        &--footer {
+          height: 4em;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          
+          &--form {
+            padding: 0 1em;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+
+            button {
+              padding: 0 3.4em;
+              border: 0;
+              background: $defPurp;
+              color: $defGrey;
+              border-radius: 6px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+              font-family: 'Lato', sans-serif;
+              font-weight: bold;
+              font-size: 12px;
+
+              img {
+                position: absolute;
+                right: 0.5em;
+              }
+            }
+
+            input {
+              background: $darkerColor;
+              border-radius: 6px;
+              border: 0;
+              font-family: 'Lato', sans-serif;
+              padding: 1em 2em;
+              box-shadow: $defaultShadow;
+              color: $defGrey;
+              letter-spacing: 0.05em;
+
+              &:first-child {
+                margin-right: 1em;
+              }
+            }
+          }
+        }
+
+        &--text-area {
+          background: $darkerColor;
+          box-shadow: inset 0px 5px 7px rgba(0, 0, 0, 0.2);
+
+          textarea {
+            width: 100%;
+            height: 25em;
+            background: transparent;
+            border: 0;
+            padding: 2em;
+            font-family: 'Lato', sans-serif;
+            font-size: 1em;
+            color: $defGrey;
+            outline: none !important;
+            letter-spacing: 0.05em;
+          }
+        }
+      }
+    }
+
+  }
+
+  footer {
+    text-align: center;
+    color: $defGrey;
+    padding: 1em;
+
+    p {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+    }
+  }
+}
