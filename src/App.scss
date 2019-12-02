@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik+Mono+One&display=swap');
 
 @font-face {
   font-family: 'Rubik';
@@ -6,7 +6,8 @@
 }
 
 $dark-green: #242E28;
-$background: #1C1C1C;
+$background: #3F3D56;
+$icon-purple: #B25FFF;
 $primary-green: #6FCF97;
 $font: 'Rubik', sans-serif;
 
@@ -15,14 +16,14 @@ $font: 'Rubik', sans-serif;
   margin: 0;
   padding: 0;
   font-family: $font;
-  // cursor: url('./images/mouse.png'), auto!important;
 }
 a {
   text-decoration: none;
 }
 
-body{
-  // background: $background;
+body {
+  font-size: 14px;
+  background: $background;
   background-image: url('./images/back.svg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -71,7 +72,6 @@ body{
 @media (max-width: 1024px) {
   .container {
     display: flex;
-    // width: 300vw;
     overflow-y: hidden;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
