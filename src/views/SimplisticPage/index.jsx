@@ -4,6 +4,7 @@ import './index.scss';
 import simplisticLogo from '../../images/logo.svg';
 import landingImage from '../../images/landing-image.svg';
 import tools from '../../images/tools.svg';
+import toolsMobile from '../../images/tools-mobile.svg';
 import chevronRight from '../../images/chevron-right.svg';
 import actions from '../../images/actions.svg';
 import description from '../../images/description.svg';
@@ -13,8 +14,7 @@ class SimplisticPage extends Component {
   defaultFormValues = {
     body: '',
     email: '',
-    fullname: '',
-    menuback: ''
+    fullname: ''
   };
 
   state = {
@@ -34,6 +34,7 @@ class SimplisticPage extends Component {
         text: 'my linkedin'
       },
     ],
+    menuback: '',
     formValues: { ...this.defaultFormValues }
   }
 
@@ -46,7 +47,7 @@ class SimplisticPage extends Component {
     const height = window.innerHeight;
     const top = window.pageYOffset;
     if (top > 270 && !menuback) {
-      this.setState({ menuback: 'rgba(63, 61, 86, 0.5)' })
+      this.setState({ menuback: 'rgba(63, 61, 86, 0.8)' })
     } else if (top < 270 && menuback) {
       this.setState({ menuback: '' })
     }
@@ -56,19 +57,27 @@ class SimplisticPage extends Component {
       && top < ((0.8 * height) * 2)
       && currentPage !== 1
     ) {
-      this.selectPage(1);
+      this.setState({ currentPage: 1 });
     } else if (
       top > (0.8 * (height * 2))
       && currentPage !== 2
     ) {
-      this.selectPage(2);
+      this.setState({ currentPage: 2 });
     } else if (top < (0.8 * height) && currentPage !== 0) {
-      this.selectPage(0);
+      this.setState({ currentPage: 0 });
     }
   }
 
   selectPage = (currentPage) => {
+    document.removeEventListener('scroll', this.onScroll);
+    const height = window.innerHeight;
+    const top = currentPage * height;
+    window.scrollTo({
+      top,
+      behavior: 'smooth'
+    });
     this.setState({ currentPage });
+    setTimeout(() => document.addEventListener('scroll', this.onScroll, false), 1000);
   }
 
   renderHeader = () => {
@@ -138,13 +147,17 @@ class SimplisticPage extends Component {
         
         <div className="simplistic-body">
 
-          <div id="homepage" className="introduction">
-            <img src={landingImage} alt="landing"/>
+          <div className="introduction">
+            <img className="introduction--image-main" src={landingImage} alt="landing"/>
+            <img className="introduction--image-mobile" src={description} alt="landing"/>
           </div>
 
-          <div id="tools" className="simplistic-tools">
+          <div className="simplistic-tools">
             <div className="simplistic-tools--parent">
-              <img src={tools} alt="tools"/>
+              <div className="simplistic-tools--image-parent">
+                <img className="simplistic-tools--image-main" src={tools} alt="tools"/>
+                <img className="simplistic-tools--image-mobile" src={toolsMobile} alt="tools"/>
+              </div>
               <div className="simplistic-tools--buttons">
                 {
                   socials.map((social) => {
@@ -160,7 +173,10 @@ class SimplisticPage extends Component {
             </div>
           </div>
 
-          <div id="message" className="simplistic-message">
+          <div className="simplistic-message">
+            <p className="simplistic-message--title">
+              send me a message
+            </p>
             <form onSubmit={this.handleSubmit}>
               <div className="simplistic-form">
                 <div className="simplistic-form--header">
@@ -175,7 +191,7 @@ class SimplisticPage extends Component {
                 </div>
                 <div className="simplistic-form--footer">
                   <div className="simplistic-form--footer--form">
-                    <div>
+                    <div className="input-parent">
                       <input
                         value={email}
                         placeholder="enter your email"
@@ -198,11 +214,11 @@ class SimplisticPage extends Component {
                 </div>
               </div>
             </form>
+            <footer>
+              <p>&copy; Christopher Akanmu {new Date().getFullYear()}</p>
+            </footer>
           </div>   
         </div>
-        <footer>
-          <p>&copy; Christopher Akanmu {new Date().getFullYear()}</p>
-        </footer>
       </div>
     )
   }
