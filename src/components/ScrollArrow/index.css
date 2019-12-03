@@ -1,7 +1,0 @@
-@keyframes bounce-fade {
-  from { top: 0; opacity: 0; } to { top: 2.5em; }
-}
-
-@keyframes bounce-fade-right {
-  from { right: 1em; opacity: 0; } to { right: 3em; }
-}

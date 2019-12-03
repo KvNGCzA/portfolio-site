@@ -187,10 +187,10 @@ $defaultShadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
           transition-property: height, width;
           transition-duration: 0.3s;
 
-          &:hover {
-            width: 12.8em;
-            height: 4.5em;
-          }
+          // &:hover {
+          //   width: 12.8em;
+          //   height: 4.5em;
+          // }
 
           img {
             position: absolute;
@@ -431,8 +431,8 @@ $defaultShadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
             border-radius: 0;
 
             &:hover {
-              height: auto;
-              width: auto;
+              // height: auto;
+              // width: auto;
             }
 
             img {
