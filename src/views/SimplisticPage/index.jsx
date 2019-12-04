@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
 import axios from 'axios';
 import './index.scss';
+import '../../App.scss';
 import simplisticLogo from '../../images/logo.svg';
 import landingImage from '../../images/landing-image.svg';
 import tools from '../../images/tools.svg';

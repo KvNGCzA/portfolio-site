@@ -7,6 +7,7 @@
 
 $darkColor: #3F3D56;
 $darkerColor: #282737;
+$lightPurple: #B769FF;
 $icon-purple: #B25FFF;
 $font: 'Rubik', sans-serif;
 $roboto: 'Lato', sans-serif;
@@ -184,13 +185,13 @@ $defaultShadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
           outline: none !important;
           margin: 1em;
           box-shadow: $defaultShadow;
-          transition-property: height, width;
-          transition-duration: 0.3s;
+          transition-property: background-color, border-color;
+          transition-duration: 2s;
 
-          // &:hover {
-          //   width: 12.8em;
-          //   height: 4.5em;
-          // }
+          &:hover {
+            background-color: $lightPurple;
+            border-color: $lightPurple;
+          }
 
           img {
             position: absolute;
@@ -429,11 +430,6 @@ $defaultShadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
             transition-property: none;
             margin: 0.5em 0;
             border-radius: 0;
-
-            &:hover {
-              // height: auto;
-              // width: auto;
-            }
 
             img {
               position: absolute;
