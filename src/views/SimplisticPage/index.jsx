@@ -22,7 +22,7 @@ class SimplisticPage extends Component {
     currentPage: 0,
     socials: [
       {
-        link: 'https://docs.google.com/presentation/d/1dxTE0rnvi7HQz5pkEp526ELH0GBFn_zK0Rq4s_BkgEI/edit?usp=sharing',
+        link: 'https://drive.google.com/file/d/1rDw3fdkyywp7gC2n-9J9tG4Wwvmga_Xu/view?usp=sharing',
         text: 'my projects'
       }, {
         link: 'https://dribbble.com/KvNG_CzA',
