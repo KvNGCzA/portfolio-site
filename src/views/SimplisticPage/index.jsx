@@ -10,6 +10,11 @@ import chevronRight from '../../images/chevron-right.svg';
 import actions from '../../images/actions.svg';
 import description from '../../images/description.svg';
 
+const {
+  REACT_APP_FORMSPREE, REACT_APP_PROJECTS_LINK,
+  REACT_APP_DRIBBBLE_LINK, REACT_APP_GITHUB_LINK,
+  REACT_APP_LINKEDIN_LINK
+} = process.env;
 
 class SimplisticPage extends Component {
   defaultFormValues = {
@@ -22,16 +27,16 @@ class SimplisticPage extends Component {
     currentPage: 0,
     socials: [
       {
-        link: 'https://drive.google.com/file/d/1rDw3fdkyywp7gC2n-9J9tG4Wwvmga_Xu/view?usp=sharing',
+        link: REACT_APP_PROJECTS_LINK,
         text: 'my projects'
       }, {
-        link: 'https://dribbble.com/KvNG_CzA',
+        link: REACT_APP_DRIBBBLE_LINK,
         text: 'my dribbble'
       }, {
-        link: 'https://github.com/kvngcza',
+        link: REACT_APP_GITHUB_LINK,
         text: 'my github'
       }, {
-        link: 'https://www.linkedin.com/in/christopher-oluwadamilare-akanmu-1b9438153/',
+        link: REACT_APP_LINKEDIN_LINK,
         text: 'my linkedin'
       },
     ],
@@ -120,7 +125,7 @@ class SimplisticPage extends Component {
     e.preventDefault();
     try {
       await axios.post(
-        process.env.REACT_APP_FORMSPREE,
+        REACT_APP_FORMSPREE,
         this.state.formValues
       );
       this.setState((prevState) => ({
