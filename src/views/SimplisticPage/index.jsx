@@ -9,6 +9,7 @@ import toolsMobile from '../../images/tools-mobile.svg';
 import chevronRight from '../../images/chevron-right.svg';
 import actions from '../../images/actions.svg';
 import description from '../../images/description.svg';
+import checkCircle from '../../images/checkCircle.svg';
 
 const {
   REACT_APP_FORMSPREE, REACT_APP_PROJECTS_LINK,
@@ -41,7 +42,9 @@ class SimplisticPage extends Component {
       },
     ],
     menuback: '',
-    formValues: { ...this.defaultFormValues }
+    formValues: { ...this.defaultFormValues },
+    right: -210,
+    sendingMessage: false
   }
 
   componentDidMount() {
@@ -121,8 +124,15 @@ class SimplisticPage extends Component {
     );
   }
 
+  toggleNotification = () => {
+    this.setState(() => ({ right: 0 }), () => setTimeout(() => {
+      this.setState({ right: -210 })
+    }, 3000));
+  }
+
   handleSubmit = async (e) => {
     e.preventDefault();
+    this.setState({ sendingMessage: true });
     try {
       await axios.post(
         REACT_APP_FORMSPREE,
@@ -130,8 +140,10 @@ class SimplisticPage extends Component {
       );
       this.setState((prevState) => ({
         ...prevState,
-        formValues: { ...this.defaultFormValues }
-      }))
+        formValues: { ...this.defaultFormValues },
+        sendingMessage: false
+      }));
+      this.toggleNotification();
     } catch (err) {
       console.log(err.response);
     }
@@ -145,85 +157,110 @@ class SimplisticPage extends Component {
     }))
   }
 
-  render() {
-    const { socials, formValues: { body, email, fullname } } = this.state;
-    return (
-      <div className="simplistic-page">
-        {this.renderHeader()}
-        
-        <div className="simplistic-body">
+  renderSectionOne = () => {
+    return(
+      <div className="introduction">
+        <img className="introduction--image-main" src={landingImage} alt="landing"/>
+        <img className="introduction--image-mobile" src={description} alt="landing"/>
+      </div>
+    );
+  }
 
-          <div className="introduction">
-            <img className="introduction--image-main" src={landingImage} alt="landing"/>
-            <img className="introduction--image-mobile" src={description} alt="landing"/>
+  renderSectionTwo = () => {
+    const { socials } = this.state;
+    return(
+      <div className="simplistic-tools">
+        <div className="simplistic-tools--parent">
+          <div className="simplistic-tools--image-parent">
+            <img className="simplistic-tools--image-main" src={tools} alt="tools"/>
+            <img className="simplistic-tools--image-mobile" src={toolsMobile} alt="tools"/>
           </div>
+          <div className="simplistic-tools--buttons">
+            {
+              socials.map((social) => {
+                return (
+                  <a href={social.link} key={social.text} target="_blank" rel="noopener noreferrer">
+                    {social.text}
+                    <img src={chevronRight} alt="chevron-right"/>
+                  </a>
+                )
+              })
+            }
+          </div>
+        </div>
+      </div>
+    );
+  }
 
-          <div className="simplistic-tools">
-            <div className="simplistic-tools--parent">
-              <div className="simplistic-tools--image-parent">
-                <img className="simplistic-tools--image-main" src={tools} alt="tools"/>
-                <img className="simplistic-tools--image-mobile" src={toolsMobile} alt="tools"/>
-              </div>
-              <div className="simplistic-tools--buttons">
-                {
-                  socials.map((social) => {
-                    return (
-                      <a href={social.link} key={social.text} target="_blank" rel="noopener noreferrer">
-                        {social.text}
-                        <img src={chevronRight} alt="chevron-right"/>
-                      </a>
-                    )
-                  })
-                }
+  renderSectionThree = () => {
+    const { formValues: { body, email, fullname } } = this.state;
+    return(
+      <div className="simplistic-message">
+
+        <p className="simplistic-message--title">
+          send me a message
+        </p>
+        <form onSubmit={this.handleSubmit}>
+          <div className="simplistic-form">
+            <div className="simplistic-form--header">
+              <img src={actions} alt="window actions" />
+            </div>
+            <div className="simplistic-form--text-area">
+              <textarea
+                value={body}
+                placeholder="Tell me what I can do for you :)..."
+                onChange={(e) => this.onChangeValue('body', e)}
+                required
+              />
+            </div>
+            <div className="simplistic-form--footer">
+              <div className="simplistic-form--footer--form">
+                <div className="input-parent">
+                  <input
+                    value={email}
+                    placeholder="enter your email"
+                    type="email"
+                    onChange={(e) => this.onChangeValue('email', e)}
+                    required
+                  />
+                  <input
+                    value={fullname}
+                    placeholder="enter your fullname"
+                    required
+                    onChange={(e) => this.onChangeValue('fullname', e)}
+                  />
+                </div>
+                <button type="submit" className={this.state.sendingMessage ? 'disabled' : ''} disabled={this.state.sendingMessage}>
+                  send
+                  <img src={chevronRight} alt="chevron-right"/>
+                </button>
               </div>
             </div>
           </div>
+        </form>
+        <footer>
+          <p>&copy; Christopher Akanmu {new Date().getFullYear()}</p>
+        </footer>
+      </div>   
+    );
+  }
 
-          <div className="simplistic-message">
-            <p className="simplistic-message--title">
-              send me a message
-            </p>
-            <form onSubmit={this.handleSubmit}>
-              <div className="simplistic-form">
-                <div className="simplistic-form--header">
-                  <img src={actions} alt="window actions" />
-                </div>
-                <div className="simplistic-form--text-area">
-                  <textarea
-                    value={body}
-                    placeholder="Tell me what I can do for you :)..."
-                    onChange={(e) => this.onChangeValue('body', e)}
-                  />
-                </div>
-                <div className="simplistic-form--footer">
-                  <div className="simplistic-form--footer--form">
-                    <div className="input-parent">
-                      <input
-                        value={email}
-                        placeholder="enter your email"
-                        type="email"
-                        onChange={(e) => this.onChangeValue('email', e)}
-                        required
-                      />
-                      <input
-                        value={fullname}
-                        placeholder="enter your fullname"
-                        required
-                        onChange={(e) => this.onChangeValue('fullname', e)}
-                      />
-                    </div>
-                    <button type="submit">
-                      send
-                      <img src={chevronRight} alt="chevron-right"/>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </form>
-            <footer>
-              <p>&copy; Christopher Akanmu {new Date().getFullYear()}</p>
-            </footer>
-          </div>   
+  render() {
+    return (
+      <div className="simplistic-page">
+        {this.renderHeader()}
+        <div className="simplistic-body">
+          {this.renderSectionOne()}
+          {this.renderSectionTwo()}
+          {this.renderSectionThree()}
+        </div>
+
+        <div className="notification" style={{ right: this.state.right }}>
+          <div className="edge" />
+          <div className="content">
+            <p>message sent</p>
+            <img src={checkCircle} alt="check mark"/>
+          </div>
         </div>
       </div>
     )
