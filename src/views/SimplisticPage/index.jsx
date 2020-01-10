@@ -1,7 +1,9 @@
 import React, { Component }  from 'react';
 import axios from 'axios';
+import { Helmet } from 'react-helmet'
 import './index.scss';
 import '../../App.scss';
+import logo from '../../images/logo.png';
 import simplisticLogo from '../../images/logo.svg';
 import landingImage from '../../images/landing-image.svg';
 import tools from '../../images/tools.svg';
@@ -44,12 +46,37 @@ class SimplisticPage extends Component {
     menuback: '',
     formValues: { ...this.defaultFormValues },
     right: -210,
-    sendingMessage: false
+    sendingMessage: false,
+    seo: {
+      title: "Christopher Akanmu - Software Engineer + UI/UX Designer",
+      description: "Christopher Akanmu is a worldcalss Fullstack Software Engineer at Andela, Quality Assurance Engineer at ProdPerfect and UI/UX Designer from Lagos, Nigeria.",
+      url: "https://www.christopherakanmu.com/",
+      image: logo
+    }
   }
 
   componentDidMount() {
     document.addEventListener('scroll', this.onScroll, false);
   }
+
+  renderSEO = () =>
+    <Helmet
+      title={this.state.seo.title}
+      meta={[
+        {
+          name: "description",
+          property: "og:description",
+          content: this.state.seo.description
+        },
+        { property: "og:title", content: this.state.seo.title },
+        { property: "og:url", content: this.state.seo.url },
+        { property: "og:image", content: this.state.seo.image },
+        { property: "og:image:type", content: "image/png" },
+        { property: "twitter:image:src", content: this.state.seo.image },
+        { property: "twitter:title", content: this.state.seo.title },
+        { property: "twitter:description", content: this.state.seo.description }
+      ]}
+    />
 
   onScroll = () => {
     const { currentPage, menuback } = this.state;
@@ -248,6 +275,7 @@ class SimplisticPage extends Component {
   render() {
     return (
       <div className="simplistic-page">
+        {this.renderSEO()}
         {this.renderHeader()}
         <div className="simplistic-body">
           {this.renderSectionOne()}
