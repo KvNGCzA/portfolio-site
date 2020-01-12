@@ -49,7 +49,7 @@ class SimplisticPage extends Component {
     sendingMessage: false,
     seo: {
       title: "Christopher Akanmu - Software Engineer + UI/UX Designer",
-      description: "Christopher Akanmu is a worldcalss Fullstack Software Engineer at Andela, Quality Assurance Engineer at ProdPerfect and UI/UX Designer from Lagos, Nigeria.",
+      description: "Christopher Akanmu is a world-class Fullstack Software Engineer at Andela, Quality Assurance Engineer at ProdPerfect and UI/UX Designer from Lagos, Nigeria.",
       url: "https://www.christopherakanmu.com/",
       image: logo
     }
