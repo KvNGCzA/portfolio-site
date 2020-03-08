@@ -52,11 +52,20 @@ class SimplisticPage extends Component {
       description: "Christopher Akanmu is a world-class Fullstack Software Engineer at Andela, Quality Assurance Engineer at ProdPerfect and UI/UX Designer from Lagos, Nigeria.",
       url: "https://www.christopherakanmu.com/",
       image: logo
-    }
+    },
+    landingImageLeft: '-100%',
+    landingImageOpacity: 0
   }
 
   componentDidMount() {
     document.addEventListener('scroll', this.onScroll, false);
+    this.setAnimations();
+  }
+
+  setAnimations = () => {
+    setTimeout(() => {
+      this.setState({ landingImageLeft: 0, landingImageOpacity: 1 });
+    }, 2000);
   }
 
   renderSEO = () =>
@@ -187,8 +196,18 @@ class SimplisticPage extends Component {
   renderSectionOne = () => {
     return(
       <div className="introduction">
-        <img className="introduction--image-main" src={landingImage} alt="landing"/>
-        <img className="introduction--image-mobile" src={description} alt="landing"/>
+        <img className="introduction--image-main" style={{
+            left: this.state.landingImageLeft,
+            opacity: this.state.landingImageOpacity
+          }} src={landingImage} alt="landing"
+        />
+        <img className="introduction--image-mobile"
+          style={{
+            left: this.state.landingImageLeft,
+            opacity: this.state.landingImageOpacity
+          }}
+          src={description} alt="landing"
+        />
       </div>
     );
   }
