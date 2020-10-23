@@ -49,7 +49,7 @@ class SimplisticPage extends Component {
     sendingMessage: false,
     seo: {
       title: "Christopher Akanmu - Software Engineer + UI/UX Designer",
-      description: "Christopher Akanmu is a world-class Fullstack Software Engineer at Andela, Quality Assurance Engineer at ProdPerfect and UI/UX Designer from Lagos, Nigeria.",
+      description: "Christopher Akanmu is a world-class Cloud Solutions Architect at Trilogy, Ex-Fullstack Software Engineer at Andela, Ex-Quality Assurance Engineer at ProdPerfect and UI/UX Designer from Lagos, Nigeria.",
       url: "https://www.christopherakanmu.com/",
       image: logo
     },
@@ -199,14 +199,14 @@ class SimplisticPage extends Component {
         <img className="introduction--image-main" style={{
             left: this.state.landingImageLeft,
             opacity: this.state.landingImageOpacity
-          }} src={landingImage} alt="landing"
+          }} src={landingImage} alt="landing christopher akanmu portfolio"
         />
         <img className="introduction--image-mobile"
           style={{
             left: this.state.landingImageLeft,
             opacity: this.state.landingImageOpacity
           }}
-          src={description} alt="landing"
+          src={description} alt="landing christopher akanmu portfolio"
         />
       </div>
     );
