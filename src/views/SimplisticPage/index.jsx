@@ -58,6 +58,7 @@ class SimplisticPage extends Component {
   }
 
   componentDidMount() {
+    this.selectPage(0);
     document.addEventListener('scroll', this.onScroll, false);
     this.setAnimations();
   }
@@ -91,6 +92,8 @@ class SimplisticPage extends Component {
     const { currentPage, menuback } = this.state;
     const height = window.innerHeight;
     const top = window.pageYOffset;
+    const percentile = 0.8;
+
     if (top > 270 && !menuback) {
       this.setState({ menuback: 'rgba(63, 61, 86, 0.8)' })
     } else if (top < 270 && menuback) {
@@ -98,17 +101,17 @@ class SimplisticPage extends Component {
     }
 
     if (
-      top > (0.8 * height)
-      && top < ((0.8 * height) * 2)
+      top > (percentile * height)
+      && top < ((percentile * height) * 2)
       && currentPage !== 1
     ) {
       this.setState({ currentPage: 1 });
     } else if (
-      top > (0.8 * (height * 2))
+      top > (percentile * (height * 2))
       && currentPage !== 2
     ) {
       this.setState({ currentPage: 2 });
-    } else if (top < (0.8 * height) && currentPage !== 0) {
+    } else if (top < (percentile * height) && currentPage !== 0) {
       this.setState({ currentPage: 0 });
     }
   }
@@ -137,19 +140,19 @@ class SimplisticPage extends Component {
             backgroundColor: this.state.menuback
           }}>
             <li className={currentPage === 0 ? 'active' : ''}>
-              <a href="#homepage" onClick={() => this.selectPage(0)}>home</a>
+              <button href="#" onClick={() => this.selectPage(0)}>home</button>
               {currentPage === 0 ? <span className="active--underline-parent">
                 <span className="active--underline"></span>
               </span> : null}
             </li>
             <li className={currentPage === 1 ? 'active' : ''}>
-              <a href="#tools" onClick={() => this.selectPage(1)}>my tools</a>
+              <button href="#" onClick={() => this.selectPage(1)}>my tools</button>
               {currentPage === 1 ? <span className="active--underline-parent">
                 <span className="active--underline"></span>
               </span> : null}
             </li>
             <li className={currentPage === 2 ? 'active' : ''}>
-              <a href="#message" onClick={() => this.selectPage(2)}>contact</a>
+              <button href="#" onClick={() => this.selectPage(2)}>contact</button>
               {currentPage === 2 ? <span className="active--underline-parent">
                 <span className="active--underline"></span>
               </span> : null}

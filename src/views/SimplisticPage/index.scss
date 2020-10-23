@@ -104,7 +104,7 @@ $defaultShadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
         align-items: center;
         color: $icon-purple;
 
-        a {
+        button {
           color: $icon-purple;
         }
 
@@ -124,14 +124,22 @@ $defaultShadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
 
       li {
         display: inline-block;
-        color: $defGrey;
-        font-family: $font;
-        text-transform: uppercase;
         margin: 0 1em;
-        text-align: center;
 
-        a {
+        button {
           color: $defGrey;
+          border: 0;
+          background-color: transparent;
+          font-family: $font;
+          text-transform: uppercase;
+          display: flex;
+          font-size: 14px;
+          text-align: center;
+          outline: none !important;
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
