@@ -3,9 +3,9 @@ import React from "react";
 import logo from "../../images/logo.png";
 
 const SEO = {
-  title: "Christopher Akanmu - Software Engineer + UI/UX Designer",
+  title: "Christopher Akanmu - Senior Software Engineer",
   description:
-    "Christopher Akanmu is a world-class Cloud Solutions Architect at Trilogy, Ex-Fullstack Software Engineer at Andela, Ex-Quality Assurance Engineer at ProdPerfect and UI/UX Designer from Lagos, Nigeria.",
+    "Experienced Software Engineer specializing in frontend development with expertise in React and Angular. Proven track record in designing and implementing interactive and user-friendly web applications. Skilled in AWS, TypeScript, and modern web technologies. Strong collaborator with international teams, contributing to the development of innovative e-learning platforms and productivity tools. Committed to delivering high-quality products and ensuring seamless user experiences. Trusted contributor to successful software releases and product enhancements. Continuous learner with a passion for staying updated with the latest industry trends and technologies..",
   url: "https://www.christopherakanmu.com/",
   image: logo,
 };

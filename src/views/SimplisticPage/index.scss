@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'Rubik';
-  src: url('../../fonts/RubikOne-Regular.ttf')  format('truetype')
+  src: url('../../fonts/RubikOne-Regular.ttf') format('truetype')
 }
 
 $darkColor: #3F3D56;
@@ -88,7 +88,7 @@ $defaultShadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
         justify-content: flex-end;
       }
     }
-    
+
     ul {
       list-style: none;
       display: flex;
@@ -149,7 +149,7 @@ $defaultShadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
       position: relative;
       font-family: $font;
       text-transform: uppercase;
-      
+
 
       span {
         font-family: $font;
@@ -171,16 +171,15 @@ $defaultShadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
       display: flex;
       justify-content: center;
 
-      img {
-        width: 80%;
-        height: auto;
-        position: relative;
+      &--new-image {
+        height: 100%;
+        width: 85%;
+        max-width: 1000px;
+        background: url('../../images/landing-image.png') no-repeat center center;
+        background-size: contain;
         transition-property: left opacity;
         transition-duration: 2s;
-      }
-
-      &--image-mobile {
-        display: none;
+        position: relative;
       }
     }
 
@@ -197,15 +196,52 @@ $defaultShadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
         align-items: center;
         height: 100%;
 
-        img {
-          width: 50em;
-          height: auto;
+        &-grid {
+          display: flex;
+          flex-wrap: wrap;
+          max-width: 770px;
+          gap: 16px;
+          justify-content: center;
+
+          .tool {
+            background-color: $darkColor;
+            max-width: 224px;
+            padding: 34px;
+            text-align: center;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+            & > * {
+              font-family: 'Lato', sans-serif;
+              letter-spacing: 0.08em;
+            }
+
+
+            &--img {
+              width: 50px;
+              height: auto;
+            }
+
+            &--title {
+              font-size: 1.2em;
+              color: $icon-purple;
+            }
+
+            &--description {
+              font-size: 1em;
+              color: $defGrey;
+              line-height: 19px;
+            }
+
+          }
         }
       }
 
-      &--image-mobile {
-        display: none;
-      }
 
       &--buttons {
         display: flex;
@@ -296,7 +332,7 @@ $defaultShadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
           height: 4em;
           border-bottom-left-radius: 10px;
           border-bottom-right-radius: 10px;
-          
+
           &--form {
             padding: 0 1em;
             display: flex;
@@ -401,26 +437,31 @@ $defaultShadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
           width: 90%;
         }
 
-        &--image-main {
-          display: none;
-        }
-  
-        &--image-mobile {
-          display: block;
+
+        &--new-image {
+          background: url('../../images/description.png') no-repeat center center;
+          background-size: contain;
         }
       }
 
       .simplistic-tools {
-  
-        &--parent {
-  
-          img {
-            width: 100%;
-          }
-        }
 
         &--image-parent {
           width: 90%;
+        }
+
+        &--grid-parent {
+          background: red;
+
+          .tool {
+            background-color: $darkColor;
+            width: 20em;
+            height: 20em;
+
+            .icon {
+              width: 40px;
+            }
+          }
         }
       }
 
@@ -457,21 +498,11 @@ $defaultShadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
     }
 
     .simplistic-body {
-
       .introduction {
-        height: auto;
-        padding: 10em 0;
-
-        img {
-
-        }
-
         &--image-main {
-
-        }
-  
-        &--image-mobile {
-
+          height: auto;
+          width: 90%;
+          max-width: 800px;
         }
       }
 
@@ -499,9 +530,9 @@ $defaultShadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
             }
           }
         }
-  
+
         &--parent {
-  
+
           img {
             // width: 95%;
           }
@@ -517,9 +548,6 @@ $defaultShadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
           padding: 0.1em 0;
         }
 
-        &--image-mobile {
-          display: block;
-        }
 
         &--image-main {
           display: none;

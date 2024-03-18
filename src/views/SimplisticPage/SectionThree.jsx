@@ -56,7 +56,9 @@ const SectionThree = ({
         </div>
       </form>
       <footer>
-        <p>&copy; Christopher Akanmu {new Date().getFullYear()}</p>
+        <p style={{ fontSize: 16 }}>
+          &copy; Christopher Akanmu {new Date().getFullYear()}
+        </p>
       </footer>
     </div>
   );
