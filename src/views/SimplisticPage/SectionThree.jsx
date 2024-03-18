@@ -13,13 +13,15 @@ const SectionThree = ({
   return (
     <div className="simplistic-message">
       <p className="simplistic-message--title">send me a message</p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} name="contact">
+        <input type="hidden" name="contact" value="contact" />
         <div className="simplistic-form">
           <div className="simplistic-form--header">
             <img src={actions} alt="window actions" />
           </div>
           <div className="simplistic-form--text-area">
             <textarea
+              name={"body"}
               value={body}
               placeholder="Tell me what I can do for you :)..."
               onChange={(e) => onChangeValue("body", e)}
@@ -35,8 +37,10 @@ const SectionThree = ({
                   type="email"
                   onChange={(e) => onChangeValue("email", e)}
                   required
+                  name={"email"}
                 />
                 <input
+                  name={"fullName"}
                   value={fullName}
                   placeholder="enter your fullName"
                   required

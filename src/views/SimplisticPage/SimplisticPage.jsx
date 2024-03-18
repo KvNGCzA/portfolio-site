@@ -1,6 +1,5 @@
 import "./index.scss";
 import React, { useCallback, useEffect, useState } from "react";
-import axios from "axios";
 import Helmet from "./Helmet";
 import Header from "./Header";
 import Notification from "./Notification";
@@ -8,9 +7,9 @@ import SectionOne from "./SectionOne";
 import SectionTwo from "./SectionTwo";
 import SectionThree from "./SectionThree";
 
-const { REACT_APP_FORMSPREE } = process.env;
+const PERCENTILE = 0.8;
 
-const defaultFormValues = {
+const DEFAULT_FORM_VALUES = {
   body: "",
   email: "",
   fullName: "",
@@ -19,7 +18,7 @@ const defaultFormValues = {
 const SimplisticPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [menuBack, setMenuBack] = useState("");
-  const [formValues, setFormValues] = useState(defaultFormValues);
+  const [formValues, setFormValues] = useState(DEFAULT_FORM_VALUES);
   const [right, setRight] = useState(-210);
   const [sendingMessage, setSendingMessage] = useState(false);
   const [landingImageLeft, setLandingImageLeft] = useState("-100%");
@@ -35,21 +34,17 @@ const SimplisticPage = () => {
   const onScroll = useCallback(() => {
     const height = window.innerHeight;
     const top = window.scrollY;
-    const percentile = 0.8;
+    const isFirstPage = top < PERCENTILE * height;
+    const isSecondPage =
+      top > PERCENTILE * height && top < PERCENTILE * (height * 2);
 
     if (top > 270 && !menuBack) setMenuBack("rgba(63, 61, 86, 0.8)");
-    else if (top < 270 && menuBack) setMenuBack("");
+    else setMenuBack("");
 
-    if (
-      top > percentile * height &&
-      top < percentile * height * 2 &&
-      currentPage !== 1
-    )
-      setCurrentPage(1);
-    else if (top > percentile * (height * 2) && currentPage !== 2)
-      setCurrentPage(2);
-    else if (top < percentile * height && currentPage !== 0) setCurrentPage(0);
-  }, [currentPage, menuBack]);
+    if (isFirstPage) setCurrentPage(0);
+    else if (isSecondPage) setCurrentPage(1);
+    else setCurrentPage(2);
+  }, [menuBack]);
 
   const selectPage = useCallback(
     (currentPage) => {
@@ -84,18 +79,33 @@ const SimplisticPage = () => {
     }, 3000);
   }, []);
 
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]),
+      )
+      .join("&");
+  };
+
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
       setSendingMessage(true);
+
       try {
-        await axios.post(REACT_APP_FORMSPREE, formValues);
-        setFormValues(defaultFormValues);
-        setSendingMessage(false);
+        await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encode({ "form-name": "contact", ...formValues }),
+        });
+
+        setFormValues(DEFAULT_FORM_VALUES);
         toggleNotification();
       } catch (err) {
         console.log(err.response);
       }
+
+      setSendingMessage(false);
     },
     [formValues, toggleNotification],
   );
