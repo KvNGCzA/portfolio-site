@@ -2,13 +2,10 @@
 
 @font-face {
   font-family: 'Rubik';
-  src: url('./fonts/RubikOne-Regular.ttf')  format('truetype')
+  src: url('./fonts/RubikOne-Regular.ttf') format('truetype')
 }
 
-$dark-green: #242E28;
 $background: #3F3D56;
-$icon-purple: #B25FFF;
-$primary-green: #6FCF97;
 $font: 'Rubik', sans-serif;
 
 * {
@@ -17,6 +14,7 @@ $font: 'Rubik', sans-serif;
   padding: 0;
   font-family: $font;
 }
+
 a {
   text-decoration: none;
 }
@@ -37,72 +35,3 @@ body {
     // display: none!important;
   }
 }
-
-.container {
-  background-color: $background;
-  background-image: url('./images/back-stars.svg');
-  background-size: contain;
-  height: 100vh;
-  position: relative;
-  width: 100%;
-  overflow-y: scroll;
-  // scroll-snap-points-y: repeat(100vh);
-  // scroll-snap-destination: 0 0;
-  scroll-snap-type: y mandatory;
-  // scroll-snap-type: mandatory;
-
-  .left-sidebar {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: space-between;
-    margin-left: 3em;
-    padding: 2em 0;
-    position: fixed;
-    z-index: 2;
-
-    .logo {
-      height: 14%;
-      width: auto;
-    }
-  }
-}
-
-@media (max-width: 1024px) {
-  .container {
-    display: flex;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    background-image: none;
-    
-    .wave {
-      width: 300vw;
-    }
-
-    .left-sidebar {
-      flex-direction: row;
-      height: auto;
-      width: 100%;
-      justify-content: space-between;
-      margin: 0;
-      padding: 0 2em;
-      bottom: 2em;
-
-      .logo {
-        width: 5em;
-        height: auto;
-      }
-
-      .social-icons {
-        display: flex;
-        flex-direction: row;
-
-        .icon {
-          margin: 0 0.5em;
-        }
-      }
-    }
-  }
-} 
