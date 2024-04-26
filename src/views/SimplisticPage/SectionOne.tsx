@@ -1,6 +1,12 @@
 import React from "react";
 
-const SectionOne = ({ landingImageLeft, landingImageOpacity }) => {
+const SectionOne = ({
+  landingImageLeft,
+  landingImageOpacity,
+}: {
+  landingImageLeft: string | number;
+  landingImageOpacity: number;
+}) => {
   return (
     <div className="introduction">
       <div

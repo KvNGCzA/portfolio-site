@@ -37,17 +37,12 @@ const TOOLS = [
   {
     title: "Frontend",
     icon: workspace,
-    tools: "React, TypeScript, Material UI, Redux, SCSS/CSS",
+    tools: "React, TypeScript, Angular, Redux, SCSS/CSS",
   },
   {
     title: "More Frontend",
     icon: paintbrush,
-    tools: "Angular, RxJs, Angular Material, React Native, Webpack",
-  },
-  {
-    title: "Testing",
-    icon: tube,
-    tools: "Enzyme, Mocha/Chai, Jest, Jasmine, Karma, Cypress, TestCafe",
+    tools: "RxJs, Material UI, Angular Material, React Native, Webpack",
   },
   {
     title: "Backend",
@@ -55,9 +50,14 @@ const TOOLS = [
     tools: "Amazon Web Services, NodeJS/Express, Sequelize",
   },
   {
-    title: "Others",
+    title: "Databases",
     icon: packageBox,
-    tools: "PostgreSQL, DynamoDB (AWS), SQL, GraphQL, yarn, NPM",
+    tools: "PostgreSQL, DynamoDB, SQL, GraphQL, yarn, NPM",
+  },
+  {
+    title: "Testing",
+    icon: tube,
+    tools: "Enzyme, Mocha/Chai, Jest, Jasmine, Karma, Cypress, TestCafe",
   },
 ];
 

@@ -1,12 +1,17 @@
 import actions from "../../images/actions.svg";
 import chevronRight from "../../images/chevron-right.svg";
-import React from "react";
+import React, { FormEventHandler } from "react";
 
 const SectionThree = ({
   handleSubmit,
   formValues,
   onChangeValue,
   sendingMessage,
+}: {
+  handleSubmit: FormEventHandler<HTMLFormElement>;
+  formValues: { body: string; email: string; fullName: string };
+  onChangeValue: (e: string, v: any) => void;
+  sendingMessage: boolean;
 }) => {
   const { body, email, fullName } = formValues;
 

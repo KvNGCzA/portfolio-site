@@ -1,7 +1,7 @@
 import checkCircle from "../../images/checkCircle.svg";
 import React from "react";
 
-const Notification = ({ right }) => {
+const Notification = ({ right }: { right: number }) => {
   return (
     <div className="notification" style={{ right: right }}>
       <div className="edge" />

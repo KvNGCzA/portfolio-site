@@ -1,5 +1,5 @@
 import "./index.scss";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { FormEvent, useCallback, useEffect, useState } from "react";
 import Helmet from "./Helmet";
 import Header from "./Header";
 import Notification from "./Notification";
@@ -21,7 +21,9 @@ const SimplisticPage = () => {
   const [formValues, setFormValues] = useState(DEFAULT_FORM_VALUES);
   const [right, setRight] = useState(-210);
   const [sendingMessage, setSendingMessage] = useState(false);
-  const [landingImageLeft, setLandingImageLeft] = useState("-100%");
+  const [landingImageLeft, setLandingImageLeft] = useState<string | number>(
+    "-100%",
+  );
   const [landingImageOpacity, setLandingImageOpacity] = useState(0);
 
   const setAnimations = useCallback(() => {
@@ -47,7 +49,7 @@ const SimplisticPage = () => {
   }, [menuBack]);
 
   const selectPage = useCallback(
-    (currentPage) => {
+    (currentPage: number) => {
       document.removeEventListener("scroll", onScroll);
       const height = window.innerHeight;
       const top = currentPage * height;
@@ -79,7 +81,7 @@ const SimplisticPage = () => {
     }, 3000);
   }, []);
 
-  const encode = (data) => {
+  const encode = (data: any) => {
     return Object.keys(data)
       .map(
         (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]),
@@ -88,7 +90,7 @@ const SimplisticPage = () => {
   };
 
   const handleSubmit = useCallback(
-    async (e) => {
+    async (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       setSendingMessage(true);
 
@@ -101,7 +103,7 @@ const SimplisticPage = () => {
 
         setFormValues(DEFAULT_FORM_VALUES);
         toggleNotification();
-      } catch (err) {
+      } catch (err: any) {
         console.log(err.response);
       }
 
@@ -110,7 +112,7 @@ const SimplisticPage = () => {
     [formValues, toggleNotification],
   );
 
-  const onChangeValue = useCallback((key, e) => {
+  const onChangeValue = useCallback((key: string, e: any) => {
     e.persist();
     setFormValues((prevFormValues) => ({
       ...prevFormValues,
