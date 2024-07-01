@@ -7,29 +7,16 @@ import tube from "../../images/tube.png";
 import packageBox from "../../images/package.png";
 import hammerSpanner from "../../images/tools.png";
 
-const {
-  REACT_APP_PROJECTS_LINK,
-  REACT_APP_DRIBBBLE_LINK,
-  REACT_APP_GITHUB_LINK,
-  REACT_APP_LINKEDIN_LINK,
-} = process.env;
+const { REACT_APP_GITHUB_LINK, REACT_APP_LINKEDIN_LINK } = process.env;
 
 const SOCIALS = [
   {
-    link: REACT_APP_PROJECTS_LINK,
-    text: "my projects",
-  },
-  {
-    link: REACT_APP_DRIBBBLE_LINK,
-    text: "my dribbble",
-  },
-  {
     link: REACT_APP_GITHUB_LINK,
-    text: "my github",
+    text: "github",
   },
   {
     link: REACT_APP_LINKEDIN_LINK,
-    text: "my linkedin",
+    text: "linkedin",
   },
 ];
 
@@ -37,27 +24,27 @@ const TOOLS = [
   {
     title: "Frontend",
     icon: workspace,
-    tools: "React, TypeScript, Angular, Redux, SCSS/CSS",
+    tools: "React, TypeScript, Material UI, Angular, Redux, SCSS/CSS",
   },
   {
     title: "More Frontend",
     icon: paintbrush,
-    tools: "RxJs, Material UI, Angular Material, React Native, Webpack",
+    tools: "RxJs, Angular Material, React Native",
   },
   {
     title: "Backend",
     icon: hammerSpanner,
-    tools: "Amazon Web Services, NodeJS/Express, Sequelize",
-  },
-  {
-    title: "Databases",
-    icon: packageBox,
-    tools: "PostgreSQL, DynamoDB, SQL, GraphQL, yarn, NPM",
+    tools: "Restful APIs, AWS, ExpressJs, Sequelize, Postgres, DynamoDB",
   },
   {
     title: "Testing",
     icon: tube,
-    tools: "Enzyme, Mocha/Chai, Jest, Jasmine, Karma, Cypress, TestCafe",
+    tools: "React Testing Library, Enzyme, Jest, Cypress",
+  },
+  {
+    title: "Others",
+    icon: packageBox,
+    tools: "Webpack, GIT, Yarn, NPM, SQL, GraphQL",
   },
 ];
 
