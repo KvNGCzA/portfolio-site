@@ -11,6 +11,10 @@ const { REACT_APP_GITHUB_LINK, REACT_APP_LINKEDIN_LINK } = process.env;
 
 const SOCIALS = [
   {
+    link: "https://portfolio.christopherakanmu.com/",
+    text: "portfolio",
+  },
+  {
     link: REACT_APP_GITHUB_LINK,
     text: "github",
   },
